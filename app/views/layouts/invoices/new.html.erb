@@ -1,0 +1,7 @@
+<%= form_for @invoice do |f| %>
+    <%= f.fields_for :line_items do |l| %>
+      <%= f.text_field :quantity %>
+      <%= f.collection_select :product_id, Product.all, :id, :name %>
+    <% end %>
+    <%= f.submit %>
+ <% end %>
